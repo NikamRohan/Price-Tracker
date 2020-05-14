@@ -7,14 +7,16 @@ from django.views.generic import ListView,DetailView,CreateView
 import time
 from django.http import HttpResponseRedirect
 from django.urls import reverse
-
+from django.conf import settings as django_settings
 
 #FOR SCRAPY
 
 import os
 import sys
+path = django_settings.BASE_DIR
 
-sys.path.append("C:/Users/admin/Desktop/COLLEGE/Desktop/DJANGO/django_amazon/amazoncrawler")
+sys.path.append(path + "/amazoncrawler")
+
 
 from amazoncrawler.spiders import amazon_spider
 
