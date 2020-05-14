@@ -1,0 +1,17 @@
+{% extends "tracker/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div class="content-section">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Add Url</legend>
+                <strong>We are currently Supporting Products from : </strong><a href="https://www.flipkart.com/" target="_blank" class="btn btn-primary" role="button">Flipkart</a><br><br>
+                {{ form|crispy }}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Add</button>
+            </div>
+        </form>
+    </div>
+{% endblock content %}

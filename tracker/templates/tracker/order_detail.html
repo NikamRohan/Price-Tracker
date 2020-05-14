@@ -1,0 +1,15 @@
+{% extends "tracker/base.html" %}
+{% block content %}
+      <article class="content-section">
+        <div class="article-metadata">
+          <a class="mr-2" href="{% url 'profile' %}">{{ order.author }}</a>
+          <small class="text-muted">{{ order.date_posted|date:"F d, Y" }}</small>
+        </div>
+        <img src="{{ order.image }}"><hr>
+        <p><a class="article-title" href="#"><strong>Product Name</strong> : {{ order.product_name }}</a></p><hr>
+        <p class="article-content"><strong>Current Price</strong> :  {{ order.price }}</p><hr>
+        <p class="article-content"><strong>Desired Price</strong> :  ₹{{ order.desired_price }}</p><hr>
+        <p class="article-content"><strong>Email</strong> :  {{ user.email }}</p><hr>
+        <p class="article-content"><strong>url of Product</strong>  :  <a href="{{ order.url }}">url</a></p>
+      </article>
+{% endblock content %}
