@@ -82,6 +82,11 @@ A Price Tracker to track the prices of your willing to buy products at E-Commerc
 ![Screenshot (208)](https://user-images.githubusercontent.com/63553348/81909352-1b3aa180-95e8-11ea-941f-c06c9622288b.png)
 
 
+**User gets Email if Price of Product Drops**
+
+![Screenshot_20200910-221655](https://user-images.githubusercontent.com/63553348/92766714-19c19000-f3b4-11ea-9963-0c21191bfc60.png)
+
+
 **Password Reset**
 
 ![Screenshot (209)](https://user-images.githubusercontent.com/63553348/81909354-1b3aa180-95e8-11ea-9ed4-9da59000f021.png)
