@@ -40,7 +40,7 @@ A Price Tracker to track the prices of your willing to buy products at E-Commerc
    
    `python manage.py process_tasks`
    
-   Note : **The setup is ready for scraping and checking but there is some technical issue....Working on that..will resolve shortlly**
+   
    
 ## Screenshots of Website
 
