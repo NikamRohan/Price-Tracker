@@ -10,7 +10,7 @@ from background_task import background
 
 
 
-@background(schedule=5)
+@background(schedule=5000)
 def notify_user():
 	print("!!!!!!!!!!!!!!!")
 	order_set=Order.objects.all()
@@ -20,8 +20,11 @@ def notify_user():
 		# my_url=order.url
 		# obj=AmazonBot()
 		# retrieved_price=obj.get_price_only(my_url)
+		# print(type(order))
+		# break
+		# print(order.author.email)
 		OrderCreateView.new_product(order,-1)
-		
+				
 
 
 

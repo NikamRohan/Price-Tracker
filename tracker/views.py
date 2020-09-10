@@ -70,35 +70,53 @@ class OrderCreateView(LoginRequiredMixin,CreateView):
         print(form)
         if form==-1:
             myurl = self.url
-
+            email_user = self.author.email
+            d_price = self.desired_price
+            p_name = self.product_name
             settings = {
                 'url' : myurl
             }
 
-            def spider_closing(spider):
-                """Activates on spider closed signal"""
-                print("Spiderclose"*10)
-            print(myurl)
+
             o_obj = self
-            crawler = Crawler(amazon_spider.AmazonSpider,settings)
-            # print(amazon_spider.AmazonSpider,settings)
+            print(myurl)
+            # print(type(o_obj))
+            # print("agfdslllllllllllllllllllllllllllllllllllgfgbfkjghgflgnnvvkdggfkgklhcckh")
+            crawler_settings = Settings()
+            setup()
+            configure_logging()
+            crawler_settings.setmodule(amazon_settings)
+            runner= CrawlerRunner(settings=crawler_settings)
+            d=runner.crawl(amazon_spider.AmazonSpider,url=myurl,price_d = d_price,name_p = p_name,u_mail=email_user,check=1)
+            time.sleep(10)
 
-            crawler.signals.connect(spider_closing, signal=signals.spider_closed)
 
-            crawler.crawl(order_obj = o_obj,check=1)
 
-            while True:
-                time.sleep(1)
-                #print(crawler.stats.get_stats())
-                st = crawler.stats.get_stats()
-                print(st)
-                try:
-                  fr=crawler.stats.get_stats()['finish_reason']
-                  print(fr)
-                  if fr=='finished':
-                    break
-                except:
-                  pass
+
+            # def spider_closing(spider):
+            #     """Activates on spider closed signal"""
+            #     print("Spiderclose"*10)
+            # print(myurl)
+            # o_obj = self
+            # crawler = Crawler(amazon_spider.AmazonSpider,settings)
+            # # print(amazon_spider.AmazonSpider,settings)
+
+            # crawler.signals.connect(spider_closing, signal=signals.spider_closed)
+
+            # crawler.crawl(order_obj = o_obj,check=1)
+
+            # while True:
+            #     time.sleep(1)
+            #     #print(crawler.stats.get_stats())
+            #     st = crawler.stats.get_stats()
+            #     print(st)
+            #     try:
+            #       fr=crawler.stats.get_stats()['finish_reason']
+            #       print(fr)
+            #       if fr=='finished':
+            #         break
+            #     except:
+            #       pass
 
             # time.sleep(15)
 
@@ -113,21 +131,28 @@ class OrderCreateView(LoginRequiredMixin,CreateView):
 
             u=self.request.user
 
-            crawler = Crawler(amazon_spider.AmazonSpider,settings)
+            crawler_settings = Settings()
+            setup()
+            configure_logging()
+            crawler_settings.setmodule(amazon_settings)
+            runner= CrawlerRunner(settings=crawler_settings)
+            d=runner.crawl(amazon_spider.AmazonSpider,url=myurl,d_price=d_price,author=self.request.user,check=0)
+            time.sleep(10)
+            # crawler = Crawler(amazon_spider.AmazonSpider,settings)
 
-            crawler.crawl(url=myurl,d_price=d_price,author=self.request.user,check=0)
-            st = crawler.stats.get_stats()
-            print(st)
-            while True:
-                print(crawler.stats.get_stats())
-                time.sleep(1)
-                #print(crawler.stats.get_stats())
-                try:
-                  fr=crawler.stats.get_stats()['finish_reason']
-                  print(fr)
-                  if fr=='finished':
-                    break
-                except:
-                  pass
+            # crawler.crawl(url=myurl,d_price=d_price,author=self.request.user,check=0)
+            # st = crawler.stats.get_stats()
+            # print(st)
+            # while True:
+            #     print(crawler.stats.get_stats())
+            #     time.sleep(1)
+            #     #print(crawler.stats.get_stats())
+            #     try:
+            #       fr=crawler.stats.get_stats()['finish_reason']
+            #       print(fr)
+            #       if fr=='finished':
+            #         break
+            #     except:
+            #       pass
             
             return 1
