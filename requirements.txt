@@ -5,7 +5,7 @@ django-background-task==0.1.8
 django-background-tasks==1.2.5
 django-compat==1.0.15
 django-crispy-forms==1.8.1
-djangorestframework==3.11.0
+djangorestframework==3.11.2
 future==0.18.2
 gitdb2==2.0.6
 GitPython==3.0.5
