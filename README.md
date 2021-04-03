@@ -45,7 +45,7 @@ A Price Tracker to track the prices of your willing to buy products at E-Commerc
 
 10. **For Tracking the prices at background you need to open another Command Prompt  and goto the Project Directory Price-Tracker and run the command:**
    
-   `python manage.py process_tasks`
+     `python manage.py process_tasks`
    
    
    
