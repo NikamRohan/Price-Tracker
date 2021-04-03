@@ -32,7 +32,7 @@ def notify_user():
 		# 	subject='PRICE DROPPED!!!'
 		# 	message= order.product_name + 'the product that you had set to track.Its Price dropped'
 		# 	email_from=settings.EMAIL_HOST_USER
-		# 	recipient_list = ['rohananilnikam1@gmail.com',]
+		# 	
 		# 	send_mail(subject, message, email_from, recipient_list,fail_silently=False)
             
 

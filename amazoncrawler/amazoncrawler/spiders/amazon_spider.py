@@ -48,10 +48,10 @@ class AmazonSpider(scrapy.Spider):
 			items = AmazoncrawlerItem()
 			print("33333333333333333333")
 
-			product_name = response.xpath("//div[@class='_3Z5yZS NDB7oB _12iFZG _3PG6Wd']/div[@class='ooJZfD _3FGKd2']/div[2]/div[@class='_3gijNv col-12-12']/div[@class='_29OxBi']/div/h1/span/text()")[0].extract()
+			product_name = response.xpath("//div[@class='_1YokD2 _3Mn1Gg col-8-12']/div[@class='_1AtVbE col-12-12']/div[@class='aMaAEs']/div/h1/span/text()").extract()[0]
 			# print(product_name)
-			product_price = response.xpath("//div[@class='_3Z5yZS NDB7oB _12iFZG _3PG6Wd']/div[@class='ooJZfD _3FGKd2']/div[2]/div[@class='_3gijNv col-12-12']/div[@class='_29OxBi']/div[@class='_3iZgFn']/div[@class='_2i1QSc']/div[@class='_1uv9Cb']/div[@class='_1vC4OE _3qQ9m1']/text()")[0].extract()
-			s = response.xpath("//div[@class='_3Z5yZS NDB7oB _12iFZG _3PG6Wd']/div[@class='ooJZfD _3FGKd2']/div[@class='ooJZfD _2oZ8XT col-5-12 _2GJ0F-']/div/div/div/div[@class='keS6DZ']/div/div/ul/li/div/div/@style")[0].extract()
+			product_price = response.xpath("//div[@class='_1YokD2 _3Mn1Gg col-8-12']/div[@class='_1AtVbE col-12-12']/div[@class='aMaAEs']/div[@class='dyC4hf']/div[@class='CEmiEU']/div/div[@class='_30jeq3 _16Jk6d']/text()").extract()[0]
+			s = response.xpath("//div[@class='_2c7YLP UtUXW0 _6t1WkM _3HqJxg']/div[@class='_1YokD2 _2GoDe3']/div[@class='_1YokD2 _3Mn1Gg col-5-12 _78xt5Y']/div/div/div/div/div/div[@class='_2mLllQ']/ul/li[@class='_20Gt85 _1Y_A6W']/div[@class='_1AuMiq P9aMAP']/div/@style").extract()[0]
 			l = s.split('(')
 			product_img = l[1][:-1]
 			print(product_name)
@@ -71,7 +71,7 @@ class AmazonSpider(scrapy.Spider):
 
 		else:
 
-			product_price = response.xpath("//div[@class='_3Z5yZS NDB7oB _12iFZG _3PG6Wd']/div[@class='ooJZfD _3FGKd2']/div[2]/div[@class='_3gijNv col-12-12']/div[@class='_29OxBi']/div[@class='_3iZgFn']/div[@class='_2i1QSc']/div[@class='_1uv9Cb']/div[@class='_1vC4OE _3qQ9m1']/text()")[0].extract()
+			product_price = response.xpath("//div[@class='_1YokD2 _3Mn1Gg col-8-12']/div[@class='_1AtVbE col-12-12']/div[@class='aMaAEs']/div[@class='dyC4hf']/div[@class='CEmiEU']/div/div[@class='_30jeq3 _16Jk6d']/text()").extract()[0]
 			print("Checking price")
 			product_price = product_price.replace(",","")
 			product_price = product_price[1:]

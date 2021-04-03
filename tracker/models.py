@@ -10,7 +10,7 @@ class Order(models.Model):
 	price= models.CharField(max_length=100)
 	desired_price=models.CharField(max_length=100)
 	date_posted=models.DateTimeField(default=timezone.now)
-	url=models.CharField(max_length=1000)
+	url=models.CharField(max_length=2000)
 	author=models.ForeignKey(User, on_delete=models.CASCADE)
 	image = models.URLField(null = True, blank = True)
 
