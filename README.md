@@ -43,7 +43,7 @@ A Price Tracker to track the prices of your willing to buy products at E-Commerc
       
     2. **And then instead of directly setting EMAIL_HOST_USER = 'your-username@gmail.com' and EMAIL_HOST_PASSWORD = 'Application spectific password(for eg: smbumqjiurmqrywn)'**        you can follow this url to set up environment variables for Email and password: https://stackoverflow.com/questions/13995932/how-to-secure-application-specific-passwords-for-gmail. Give name to environment variables as mentioned in Price-Tracker/django_amazon/settings.py file.
 
-10. **For Tracking the prices at background you need to open another Command Prompt  and goto the Project Directory Price-Tracker and run the command:**
+10. **For Tracking the prices at background you need to open another Command Prompt  and goto the Project Directory Price-Tracker activate your virtual environment and run the command:**
    
      `python manage.py process_tasks`
    
