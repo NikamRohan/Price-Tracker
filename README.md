@@ -36,9 +36,16 @@ A Price Tracker to track the prices of your willing to buy products at E-Commerc
 
 8. **Now you should be able to navigate through the website and explore its features.**
 
-9. **For Tracking the prices at background you need to open another Command Prompt  and goto the Project Directory Price-Tracker and run the command:**
+9. **Now for tracking the prices in background you need to setup app password with your gmail account that would be used to send alert message to user if prices of product fall below desired price.**
+    
+    1. **For setting up app password**   
+      follow this url:https://suhailvs.github.io/blog02.html#:~:text=Click%20the%20tab%20for%20App,Generate%20application%2Dspecific%20password%20button. settings.py file could       be found in Price-Tracker/django_amazon/settings.py
+      
+    2. **And then instead of directly setting EMAIL_HOST_USER = 'your-username@gmail.com' and EMAIL_HOST_PASSWORD = 'Application spectific password(for eg: smbumqjiurmqrywn)'**        you can follow this url to set up environment variables for Email and password: https://stackoverflow.com/questions/13995932/how-to-secure-application-specific-passwords-for-gmail. Give name to environment variables as mentioned in Price-Tracker/django_amazon/settings.py file.
+
+10. **For Tracking the prices at background you need to open another Command Prompt  and goto the Project Directory Price-Tracker activate your virtual environment and run the command:**
    
-   `python manage.py process_tasks`
+     `python manage.py process_tasks`
    
    
    
